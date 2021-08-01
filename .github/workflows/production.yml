@@ -48,6 +48,9 @@ jobs:
           echo "Log level: ${{ github.event.inputs.logLevel }}"
           echo "Tags: ${{ github.event.inputs.tags }}"
 
+      - name: Run custom script
+        run: ./custom.sh
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
