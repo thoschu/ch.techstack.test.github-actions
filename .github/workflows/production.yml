@@ -66,6 +66,7 @@ jobs:
           name: deploy_dist
           path: dist
 
+      - uses: actions/upload-artifact@v2
       - name: Archive code coverage result
         if: success()
         with:
