@@ -73,16 +73,17 @@ jobs:
           name: deploy_coverage
           path: coverage
 
-#  deploy:
-#    runs-on: ubuntu-latest
-#    needs: build
-#    steps:
-#      - name: Checkout
-#        uses: actions/checkout@v2
-#      - name: Download build
-#        uses: actions/download-artifact@v2
-#        with:
-#          name: deploy_dist
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download build
+        uses: actions/download-artifact@v2
+        with:
+          name: deploy_dist
 #      - name: Deploy to GitHub Pages
 #        uses: JamesIves/github-pages-deploy-action@releases/v3
 #        with:
@@ -91,3 +92,4 @@ jobs:
 #          FOLDER: deploy_dist/angular-demo
 
 # https://focisolutions.com/2020/04/github-actions-deploying-an-angular-app/
+# https://github.com/marketplace/actions/deploy-to-github-pages
