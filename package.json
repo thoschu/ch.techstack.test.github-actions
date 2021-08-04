@@ -1,5 +1,5 @@
 {
-  "name": "github-actions",
+  "name": "@thoschu/github-actions",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
