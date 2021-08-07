@@ -1,3 +1,3 @@
-FROM nginx:1.19.2-alpine
+FROM alpine:3.9
 
-COPY ./build/ / b
+RUN apk add --no-cache nginx
