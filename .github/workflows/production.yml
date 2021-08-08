@@ -89,7 +89,7 @@ jobs:
           name: deploy_dist
 
       - name: Display structure of downloaded files
-        run: ls -R
+        run: ls -ahl
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
