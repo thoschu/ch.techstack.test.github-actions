@@ -97,8 +97,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Download build
+      - name: Download artifacts
         uses: actions/download-artifact@v2
+        with:
+          name: deploy_dist
+          path: github-actions
+          run: ls -ahl
 
       - name: Display structure of downloaded files
         run: ls -ahl
