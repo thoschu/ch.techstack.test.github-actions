@@ -119,7 +119,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ##GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: downloaded_artifact_deploy_dist/github-actions
 
