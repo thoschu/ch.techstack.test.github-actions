@@ -111,11 +111,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: deploy_dist
-          path: github-actions
+          path: github-actions_downloaded
 
       - name: Display structure of downloaded files
         run: ls -ahl
-        #working-directory: github-actions
+        #working-directory: github-actions_downloaded
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
