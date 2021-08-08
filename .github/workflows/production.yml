@@ -98,7 +98,7 @@ jobs:
 
       - name: Display structure of downloaded files
         run: ls -ahl
-        #working-directory: /home/runner/work/ch.techstack.test.github-actions/ch.techstack.test.github-actions/github-actions_downloaded
+        working-directory: github-actions_downloaded
 
   deploy:
     runs-on: ubuntu-latest
