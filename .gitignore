@@ -46,3 +46,7 @@ Thumbs.db
 
 /build
 /coverage
+
+
+# Ignore DevSpace cache and log folder
+.devspace/
