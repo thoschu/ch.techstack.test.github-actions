@@ -110,22 +110,36 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: deploy_dist
-          path: github-actions_downloaded
+          path: downloaded_artifact_deploy_dist
 
       - name: Display structure of downloaded files
         run: ls -ahl
-        working-directory: github-actions_downloaded
+        working-directory: downloaded_artifact_deploy_dist
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: main
-          FOLDER: github-actions_downloaded
+          ##GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: downloaded_artifact_deploy_dist/github-actions
 
   docker:
     runs-on: ubuntu-latest
     steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: deploy_dist
+          path: downloaded_artifact_deploy_dist
+
+      - name: Display structure of downloaded files
+        run: ls -ahl
+        working-directory: downloaded_artifact_deploy_dist
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -142,8 +156,10 @@ jobs:
 #        id: docker_build
 #        uses: docker/build-push-action@v2
 #        with:
+#          context: .
 #          push: true
 #          tags: user/app:latest
 
 # https://focisolutions.com/2020/04/github-actions-deploying-an-angular-app/
 # https://github.com/marketplace/actions/deploy-to-github-pages
+# xxx
