@@ -153,39 +153,39 @@ jobs:
           BRANCH: gh-pages
           FOLDER: downloaded_artifact_deploy_dist/github-actions
 
-  docker:
-    # if: github.event_name == 'pull_request'
-    # if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: deploy_dist
-          path: downloaded_artifact_deploy_dist
-
-      - name: Display structure of downloaded files
-        run: ls -ahl
-        working-directory: downloaded_artifact_deploy_dist
-
-      - name: Kaniko build
-        uses: aevea/action-kaniko@master
-        with:
-          image: aevea/kaniko
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          cache: true
-          cache_registry: aevea/cache
+#  docker:
+#    # if: github.event_name == 'pull_request'
+#    # if: ${{ github.ref == 'refs/heads/main' }}
+#    runs-on: ubuntu-latest
+#    steps:
+#
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#
+#      - name: Set up QEMU
+#        uses: docker/setup-qemu-action@v1
+#
+#      - name: Set up Docker Buildx
+#        uses: docker/setup-buildx-action@v1
+#
+#      - name: Download artifacts
+#        uses: actions/download-artifact@v2
+#        with:
+#          name: deploy_dist
+#          path: downloaded_artifact_deploy_dist
+#
+#      - name: Display structure of downloaded files
+#        run: ls -ahl
+#        working-directory: downloaded_artifact_deploy_dist
+#
+#      - name: Kaniko build
+#        uses: aevea/action-kaniko@master
+#        with:
+#          image: aevea/kaniko
+#          username: ${{ secrets.DOCKERHUB_USERNAME }}
+#          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+#          cache: true
+#          cache_registry: aevea/cache
 
 # https://focisolutions.com/2020/04/github-actions-deploying-an-angular-app/
 # https://github.com/marketplace/actions/deploy-to-github-pages
