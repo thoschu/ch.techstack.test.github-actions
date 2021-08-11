@@ -1,12 +1,16 @@
 // alert("Hello, World!");
-const express = require('express';
+const express = require('express');
+const path  = require('path');
 const app = express();
-const port = 3000;
+const APP_PORT = 3003;
+const PORT = process.env.PORT || APP_PORT;
 
-app.get('/', (req, res) => {
+app.use('/', express.static(__dirname + '/dist/github-actions/'));
+
+app.get('/hw', (req, res) => {
   res.send('Hello World!');
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`);
 });
