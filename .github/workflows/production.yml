@@ -29,8 +29,8 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-#    env:
-#      SERVER: techstack.ch
+    env:
+      SERVER: techstack.ch
 
     strategy:
       matrix:
@@ -152,7 +152,7 @@ jobs:
           ##GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: downloaded_artifact_deploy_dist/github-actions
-
+#
 #  docker:
 #    # if: github.event_name == 'pull_request'
 #    # if: ${{ github.ref == 'refs/heads/main' }}
@@ -186,6 +186,7 @@ jobs:
 #          password: ${{ secrets.DOCKERHUB_PASSWORD }}
 #          cache: true
 #          cache_registry: aevea/cache
-
+#
 # https://focisolutions.com/2020/04/github-actions-deploying-an-angular-app/
 # https://github.com/marketplace/actions/deploy-to-github-pages
+#
