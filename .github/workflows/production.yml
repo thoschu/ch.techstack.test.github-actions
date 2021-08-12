@@ -49,7 +49,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world! Greetz $server by $name
+        run: |
+          echo Hello, world! Greetz $server by $name
+          echo Commitd by: ${{ github.event.commits[0].author.name }}
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
@@ -107,32 +109,38 @@ jobs:
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
+        run: |
+          echo "$GITHUB_CONTEXT"
 
       - name: Dump job context
         env:
           JOB_CONTEXT: ${{ toJSON(job) }}
-        run: echo "$JOB_CONTEXT"
+        run: |
+          echo "$JOB_CONTEXT"
 
       - name: Dump steps context
         env:
           STEPS_CONTEXT: ${{ toJSON(steps) }}
-        run: echo "$STEPS_CONTEXT"
+        run: |
+          echo "$STEPS_CONTEXT"
 
       - name: Dump runner context
         env:
           RUNNER_CONTEXT: ${{ toJSON(runner) }}
-        run: echo "$RUNNER_CONTEXT"
+        run: |
+          echo "$RUNNER_CONTEXT"
 
       - name: Dump strategy context
         env:
           STRATEGY_CONTEXT: ${{ toJSON(strategy) }}
-        run: echo "$STRATEGY_CONTEXT"
+        run: |
+          echo "$STRATEGY_CONTEXT"
 
       - name: Dump matrix context
         env:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
+        run: |
+          echo "$MATRIX_CONTEXT"
 
   deploy:
     runs-on: ubuntu-latest
