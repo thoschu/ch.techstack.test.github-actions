@@ -170,6 +170,13 @@ jobs:
           ##GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: downloaded_artifact_deploy_dist/github-actions
+
+      - name: GOOGLE APP ENGINE
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          version: '290.0.1'
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
 #
 #  docker:
 #    # if: github.event_name == 'pull_request'
