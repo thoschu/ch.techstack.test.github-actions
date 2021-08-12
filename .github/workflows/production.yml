@@ -50,7 +50,7 @@ jobs:
       # Weather App
       - name: Get Weather
         run: |
-          curl https://api.openweathermap.org/data/2.5/weather?q=Budapest&appid=${{ secrets.OPENWEATHERMAP_TOKEN }}&units=metric
+          curl https://api.openweathermap.org/data/2.5/weather?q=Budapest&appid=685d75af65db689597d56a87fda9baf4&units=metric
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
