@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI-Production-Pipeline Test
+name: CI-Production-Pipeline Test [Develop]
 
 # Controls when the workflow will run
 on:
