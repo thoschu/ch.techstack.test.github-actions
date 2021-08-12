@@ -47,6 +47,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Weather App
+      - name: Get Weather
+        run: |
+          curl "https://api.openweathermap.org/data/2.5/weather?q=Budapest&appid=${{ secrets.OPENWEATHERMAP_TOKEN }}&units=metric"
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
