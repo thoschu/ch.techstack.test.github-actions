@@ -50,7 +50,7 @@ jobs:
       # Weather App
       - name: Get Weather
         run: |
-          curl -s --url "https://api.openweathermap.org/data/2.5/weather?q=Hamburg&appid=${{ secrets.OPENWEATHERMAP_TOKEN }}&units=metric"
+          curl -request GET --url 'https://api.openweathermap.org/data/2.5/weather?q=Hamburg&appid=${{secrets.OPENWEATHERMAP_TOKEN}}&units=metric'
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
