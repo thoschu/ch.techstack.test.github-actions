@@ -183,8 +183,6 @@ jobs:
 
       - uses: google-github-actions/deploy-appengine@main
         with:
-          deliverables: app.yaml
-          project_id: ponyboy-curtis-130777
           credentials: ${{ secrets.GCP_SA_KEY }}
 #
 #  docker:
