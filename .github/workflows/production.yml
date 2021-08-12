@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      name: github.actor
+      name: ${{ github.actor }}
 
     strategy:
       matrix:
