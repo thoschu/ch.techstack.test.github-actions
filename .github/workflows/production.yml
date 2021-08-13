@@ -180,7 +180,6 @@ jobs:
 
       - name: Deploy to App Engine
         run: |
-          gcloud app create
           gcloud app deploy app.yaml --quiet --no-promote #--version v1
 
 #      - uses: google-github-actions/deploy-appengine@main
