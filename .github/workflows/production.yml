@@ -171,19 +171,19 @@ jobs:
           BRANCH: gh-pages
           FOLDER: downloaded_artifact_deploy_dist/github-actions
 
-#      - name: Setup Cloud SDK
-#        uses: google-github-actions/setup-gcloud@v0.2.0
-#        with:
-#          project_id: ponyboy-curtis-130777
-#          export_default_credentials: true
-#          service_account_key: ${{ secrets.GCP_SA_KEY }}
-#
-#      - name: Deploy to App Engine
-#        run: gcloud app deploy app.yaml --quiet --no-promote --version v1
-
-      - uses: google-github-actions/deploy-appengine@main
+      - name: Setup Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.2.0
         with:
-          credentials: ${{ secrets.GCP_SA_KEY }}
+          #project_id: ponyboy-curtis-130777
+          export_default_credentials: true
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Deploy to App Engine
+        run: gcloud app deploy app.yaml --quiet --no-promote #--version v1
+
+#      - uses: google-github-actions/deploy-appengine@main
+#        with:
+#          credentials: ${{ secrets.GCP_SA_KEY }}
 #
 #  docker:
 #    # if: github.event_name == 'pull_request'
