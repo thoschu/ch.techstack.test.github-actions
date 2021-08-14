@@ -1,6 +1,6 @@
 # app.yaml
 runtime: nodejs14
-service: default
+service: production
 env: standard
 env_variables:
   NAME: "Tom S."
