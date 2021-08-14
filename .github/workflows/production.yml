@@ -171,26 +171,26 @@ jobs:
           BRANCH: gh-pages
           FOLDER: downloaded_artifact_deploy_dist/github-actions
 
-    deploy-to-google-app-engine:
-      name: Deploy to Development
-      runs-on: ubuntu-latest
-      needs: [ build ]
-      environment:
-        name: development
-        url: https://development-dot-baufi24.appspot.com
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
+  deploy-to-google-app-engine:
+    name: Deploy to Google App Engine
+    runs-on: ubuntu-latest
+    #needs: [ build ]
+    environment:
+      name: development
+      url: https://xxx.appspot.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-        - uses: google-github-actions/setup-gcloud@master
-          with:
-            #version: '290.0.1'
-            service_account_key: ${{ secrets.GCP_SA_KEY }}
-            export_default_credentials: true
-        - id: Deploy
-          uses: google-github-actions/deploy-appengine@main
-          with:
-            project_id: ponyboy-curtis-3377
+      - uses: google-github-actions/setup-gcloud@master
+        with:
+          #version: '290.0.1'
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+      - id: Deploy
+        uses: google-github-actions/deploy-appengine@main
+        with:
+          project_id: ponyboy-curtis-3377
 
 #  docker:
 #    # if: github.event_name == 'pull_request'
