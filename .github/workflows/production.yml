@@ -176,7 +176,7 @@ jobs:
     runs-on: ubuntu-latest
     #needs: [ build ]
     environment:
-      name: development
+      name: production
       url: https://xxx.appspot.com
     steps:
       - name: Checkout
