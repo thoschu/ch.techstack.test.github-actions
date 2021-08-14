@@ -65,6 +65,7 @@ jobs:
           echo test, and deploy your project.
           echo "Log level: ${{ github.event.inputs.logLevel }}"
           echo "Tags: ${{ github.event.inputs.tags }}"
+          echo "URL: ${{ steps.step_id.outputs.url_output }}"
 
       - name: Run custom script
         run: sh ./custom.sh
