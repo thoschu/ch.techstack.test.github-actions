@@ -177,7 +177,8 @@ jobs:
     #needs: [ build ]
     environment:
       name: production_environment
-      url: ${{ steps.step_id.outputs.url_output }}
+      #url: ${{ steps.step_id.outputs.url_output }}
+      url: https://production-dot-ponyboy-curtis-3377.ew.r.appspot.com/
     steps:
       - name: Checkout
         uses: actions/checkout@v2
