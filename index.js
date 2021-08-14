@@ -10,7 +10,8 @@ app.set('trust proxy', true);
 app.get("/", async (req, res) => {
   res.json({
     status: "OK",
-    port : PORT
+    port : PORT,
+    env: process.env.NAME
   });
 });
 
