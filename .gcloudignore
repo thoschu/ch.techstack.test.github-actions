@@ -12,6 +12,27 @@
 # below:
 .git
 .gitignore
+.github
+
+.idea
+.devspace
+
+coverage
+dist
+docs
+src
+.browserslistrc
+.editorconfig
+angular.json
+auth.json
+custom.sh
+devspace.yaml
+devspace_start.sh
+Dockerfile
+karma.conf.js
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
 
 # Node.js dependencies:
 node_modules/

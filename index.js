@@ -3,12 +3,17 @@
 const express = require("express");
 
 const app = express();
-const port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8080;
+
+app.set('trust proxy', true);
 
 app.get("/", async (req, res) => {
-  res.json({ status: "OK" });
+  res.json({
+    status: "OK",
+    port : PORT
+  });
 });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
