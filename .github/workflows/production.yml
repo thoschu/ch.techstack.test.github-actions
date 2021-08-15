@@ -223,12 +223,12 @@ jobs:
 #        run: ls -ahl
 #        working-directory: downloaded_artifact_deploy_dist
 
-      - name: Kaniko build
+      - name: Kaniko build and push image
         uses: aevea/action-kaniko@master
         with:
           registry: docker.pkg.github.com
           password: ${{ secrets.GITHUB_TOKEN }}
-          image: thoschu
+          image: gh-actions-test-app
           cache: true
           cache_registry: cache
 
