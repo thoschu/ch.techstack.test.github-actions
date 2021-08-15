@@ -1,6 +1,8 @@
 {
   "name": "@thoschu/github-actions",
   "version": "0.0.1",
+  "description": "Node.js on Docker",
+  "author": "Tom S. <thoschulte@gmail.com>",
   "main": "index.js",
   "scripts": {
     "i": "npm ci",

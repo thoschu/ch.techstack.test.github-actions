@@ -1,10 +1,25 @@
-#FROM alpine:3.9
-#RUN apk add --no-cache nginx
+# Basic nodejs dockerfile
+FROM node:14
 
-# Basic nginx dockerfile starting with Ubuntu 20.04
-FROM ubuntu:20.04
+ENV PORT="8888"
+ENV NAME="Tom S."
 
-COPY . /app
+# Create app directory
+WORKDIR /usr/src/app
 
-RUN apt-get -y update
-RUN apt-get -y install nginx
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
+
+COPY index.js .
+COPY downloaded_artifact_deploy_dist .
+
+EXPOSE 8888
+
+#CMD [ "node", "server.js" ]
+CMD [ "npm", "start" ]
