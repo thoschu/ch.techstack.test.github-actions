@@ -229,6 +229,6 @@ jobs:
           registry: docker.pkg.github.com
           password: ${{ secrets.GITHUB_TOKEN }}
           image: gh-actions-test-app
-          tag: latest
+          tag: [latest, 0.7]
           cache: true
           cache_registry: cache
