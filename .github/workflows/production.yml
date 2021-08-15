@@ -228,7 +228,7 @@ jobs:
         with:
           registry: docker.pkg.github.com
           password: ${{ secrets.GITHUB_TOKEN }}
-          image: kaniko
+          image: thoschu
           cache: true
           cache_registry: cache
 
