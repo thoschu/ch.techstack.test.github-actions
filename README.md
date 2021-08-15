@@ -27,13 +27,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Further steps
-
-docker run \
-  -v $(pwd):/workspace \
-  -v $(pwd)/auth.json:/kaniko/.docker/config.json \
-  gcr.io/kaniko-project/executor:latest \
-  --dockerfile /workspace/Dockerfile \ --destination "thoschu/kaniko-test" --tarPath "/workspace/kaniko-image.tar" --context dir:///workspace/
-
-http://www.anecon.com/blog/docker-basics-befehle-und-life-hacks/
-
-https://bee42.com/de/blog/tutorials/container-with-kaniko/
