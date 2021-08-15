@@ -1,3 +1,5 @@
+[![CI-Production-Pipeline Production [Main]](https://github.com/thoschu/ch.techstack.test.github-actions/actions/workflows/production.yml/badge.svg)](https://github.com/thoschu/ch.techstack.test.github-actions/actions/workflows/production.yml)
+
 # GitHubActions
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
