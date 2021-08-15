@@ -223,12 +223,22 @@ jobs:
 #        run: ls -ahl
 #        working-directory: downloaded_artifact_deploy_dist
 
-      - name: Kaniko build and push image
+      - name: Kaniko build and push image latest
         uses: aevea/action-kaniko@master
         with:
           registry: docker.pkg.github.com
           password: ${{ secrets.GITHUB_TOKEN }}
           image: gh-actions-test-app
-          tag: ["latest", "0.7"]
+          tag: latest
+          cache: true
+          cache_registry: cache
+
+      - name: Kaniko build and push image verion ${{ github.run_number }}
+        uses: aevea/action-kaniko@master
+        with:
+          registry: docker.pkg.github.com
+          password: ${{ secrets.GITHUB_TOKEN }}
+          image: gh-actions-test-app
+          tag: ${{ github.run_number }}
           cache: true
           cache_registry: cache
