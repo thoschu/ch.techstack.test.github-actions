@@ -7,7 +7,8 @@
   "scripts": {
     "i": "npm ci",
     "ng": "ng",
-    "start": "node index.js",
+    "start": "forever start index.js",
+    "stop": "forever stop index.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -24,6 +25,7 @@
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
     "express": "^4.17.1",
+    "forever": "^4.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
