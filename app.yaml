@@ -1,9 +1,9 @@
 # app.yaml
 runtime: nodejs14
-service: production
+service: test
 # env: standard
 env_variables:
-  NAME: "Tom S. [thoschu] - production"
+  NAME: "Tom S. [thoschu] - test"
 # instance_class: F1
 # automatic_scaling:
 #  min_idle_instances: automatic
