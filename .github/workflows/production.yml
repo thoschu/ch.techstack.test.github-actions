@@ -268,7 +268,7 @@ jobs:
         with:
           node-version: 14.x
           registry-url: https://npm.pkg.github.com/
-          scope: "@thoschu"
+          #scope: "@thoschu"
       - run: echo "registry=https://npm.pkg.github.com/@thoschu" >> .npmrc
       - run: npm publish $(ls *.tgz)
         env:
