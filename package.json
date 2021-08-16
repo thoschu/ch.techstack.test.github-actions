@@ -1,9 +1,10 @@
 {
   "name": "@thoschu/github-actions",
   "version": "0.0.1",
-  "description": "Node.js on Docker",
+  "description": "Node.js on Docker and Registries",
   "author": "Tom S. <thoschulte@gmail.com>",
-  "main": "index.js",
+  "bin": "bin/runner.js",
+  "main": "lib/index.js",
   "scripts": {
     "i": "npm ci",
     "ng": "ng",
@@ -28,6 +29,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "forever": "^4.0.1",
+    "ramda": "^0.27.1",
     "rxjs": "~6.6.0",
     "sha256": "^0.2.0",
     "tslib": "^2.2.0",

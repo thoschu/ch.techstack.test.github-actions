@@ -10,6 +10,7 @@ const HOST = '0.0.0.0';
 const app = express();
 
 app.set('trust proxy', true);
+
 app.use(express.static(`${__dirname}/public`));
 app.use(cors({origin: '*'}));
 
@@ -26,7 +27,5 @@ app.get('/hw', async (req, res) => {
 });
 
 app.listen(PORT, HOST, () => {
-  console.log(`App listening on port ${PORT} and host ${HOST}`);
+  console.log(`App listening on port ${PORT} and host ${HOST} - ${sha256(Math.random().toString(36))}`);
 });
-
-// sha256(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5))
