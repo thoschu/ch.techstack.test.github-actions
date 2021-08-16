@@ -5,7 +5,7 @@ const R = require('ramda'),
 
 (argumentsArr => {
     console.dir(argumentsArr);
-
+    RR.do(true, 77);
   } catch(err) {
     process.stderr.write(err);
   }
