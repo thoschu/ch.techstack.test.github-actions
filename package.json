@@ -7,8 +7,9 @@
   "scripts": {
     "i": "npm ci",
     "ng": "ng",
-    "start": "forever start index.js",
-    "stop": "forever stop index.js",
+    "start": "node index.js",
+    "start:forever": "forever start index.js",
+    "stop:forever": "forever stop index.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",

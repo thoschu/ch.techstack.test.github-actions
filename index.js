@@ -17,8 +17,7 @@ app.get("/", async (req, res) => {
   res.json({
     status: "OK",
     port : PORT,
-    env: process.env.NAME || null,
-    crypto: sha256(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5))
+    env: process.env.NAME || null
   });
 });
 
@@ -27,5 +26,7 @@ app.get('/hw', async (req, res) => {
 });
 
 app.listen(PORT, HOST, () => {
-  console.log(`App listening on port ${PORT}`);
+  console.log(`App listening on port ${PORT} and host ${HOST}`);
 });
+
+// sha256(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5))
