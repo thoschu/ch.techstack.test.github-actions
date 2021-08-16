@@ -259,11 +259,12 @@ jobs:
     runs-on: ubuntu-18.04
     if: github.repository_owner == 'thoschu'
     steps:
-      - name: Upload
+      - name: Download artifact
         uses: actions/download-artifact@v2
         with:
           name: package
-      - uses: actions/setup-node@v1
+      - name: Upload package
+        uses: actions/setup-node@v1
         with:
           node-version: 14.x
           registry-url: https://npm.pkg.github.com/
