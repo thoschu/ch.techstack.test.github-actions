@@ -253,23 +253,39 @@ jobs:
           name: package
           path: "*.tgz"
 
-  publish:
-    name: "Publish to GitHub Packages"
-    needs: [ package ]
-    runs-on: ubuntu-18.04
-    if: github.repository_owner == 'thoschu'
+#  publish:
+#    name: "Publish to GitHub Packages"
+#    needs: [ package ]
+#    runs-on: ubuntu-18.04
+#    if: github.repository_owner == 'thoschu'
+#    steps:
+#      - name: Download artifact
+#        uses: actions/download-artifact@v2
+#        with:
+#          name: package
+#      - name: Upload package
+#        uses: actions/setup-node@v1
+#        with:
+#          node-version: 14.x
+#          registry-url: https://npm.pkg.github.com/
+#          scope: "@thoschu"
+#      - run: echo "registry=https://npm.pkg.github.com/@thoschu" >> .npmrc
+#      - run: npm publish $(ls *.tgz)
+#        env:
+#          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH}}
+
+  publish-gpr:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          name: package
-      - name: Upload package
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
+          node-version: 14
           registry-url: https://npm.pkg.github.com/
-          scope: "@thoschu"
-      - run: echo "registry=https://npm.pkg.github.com/@thoschu" >> .npmrc
-      - run: npm publish $(ls *.tgz)
+      - run: npm ci
+      - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH}}
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
