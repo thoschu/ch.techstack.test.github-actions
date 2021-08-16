@@ -16,9 +16,9 @@ class TimeFormatted extends HTMLElement { // (1)
 
 }
 
-customElements.define("time-formatted", TimeFormatted); // (2)
+window.customElements.define("time-formatted", TimeFormatted); // (2)
 
-/*
+/* // (3)
 <time-formatted datetime="2021-07-13"
   year="numeric" month="long" day="numeric"
   hour="numeric" minute="numeric" second="numeric"
