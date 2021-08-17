@@ -4,10 +4,34 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script src="https://ponyboy-curtis-3377.ew.r.appspot.com/js/time-formatted-wc.js"></script>
+  <script src="//ponyboy-curtis-3377.ew.r.appspot.com/js/time-formatted-wc.js"></script>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
 <link rel="stylesheet" href="styles.31d6cfe0d16ae931b73c.css"></head>
 <body>
+  <template id="warningtemplate">
+    <p>The <slot name="whats-coming">Zombies</slot> are coming!</p>
+  </template>
   <app-root></app-root>
+  <hr>
+  <script>
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "20162199",
+      formId: "05e8aedb-0207-47ef-b397-b678fc425d93"
+    });
+
+    // // Create with javascript
+    // var newDrawer = window.document.createElement('time-formatted');
+    //
+    // // Add it to the page
+    // window.document.body.appendChild(newDrawer);
+    //
+    // // Attach event listeners
+    // window.document.querySelector('time-formatted').addEventListener('open', function(..._) {
+    //   console.dir(_);
+    // });
+  </script>
+  <hr>
   <time-formatted style="color: grey;" datetime="2021-07-13" year="numeric" month="long" day="numeric" hour="numeric" minute="numeric" second="numeric" time-zone-name="short"></time-formatted>
 <script src="runtime.586e05eb682baaa14bde.js" defer></script><script src="polyfills.a1a2eb23d92f6be5c3ff.js" defer></script><script src="main.e2ce017ce875bb690db3.js" defer></script>
 
