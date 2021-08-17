@@ -10,3 +10,4 @@ const R = require('ramda'),
     process.stderr.write(err);
   }
 })(R.prop('argv', process));
+

@@ -11,6 +11,7 @@
     "start": "node index.js",
     "start:forever": "forever start index.js",
     "stop:forever": "forever stop index.js",
+    "serve": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
