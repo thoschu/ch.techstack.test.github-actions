@@ -2,6 +2,7 @@
 
 name: CI-Production-Pipeline Production [Main]
 
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -23,6 +24,7 @@ on:
         default: 'warning'
       tags:
         description: 'Test scenario tags'
+        required: false
 
 env:
   server: techstack.ch
@@ -278,9 +280,10 @@ jobs:
       - name: Dump Tagname
         env:
           TAG_CONTEXT: ${{ github.event.release.tag_name }}
+          FOO_C: ${{ node -p "require('./package.json').version" }}
         run: |
             echo "$TAG_CONTEXT"
-            node -p "require('./package.json').version"
+            echo "$FOO_C"
 
       - run: npm ci
 #      - run: npm publish
