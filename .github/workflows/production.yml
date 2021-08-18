@@ -271,12 +271,19 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
-      env:
-        TAG_CONTEXT: ${{ github.event.release.tag_name }}
-      - run: |
-          npm version $TAG_CONTEXT
-          echo "$TAG_CONTEXT"
-        - run: npm ci
-      - run: npm publish
+
+      - name: Dump env
+          run: env | sort
+
+      - name: Dump Tagname
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH}}
+          TAG_CONTEXT: ${{ github.event.release.tag_name }}
+        run: |
+            echo "TAG_CONTEXT"
+
+#      - run: |
+#          npm version ${{ github.event.release.tag_name }}
+#      - run: npm ci
+#      - run: npm publish
+#        env:
+#          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH}}
