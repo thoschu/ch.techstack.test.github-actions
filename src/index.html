@@ -22,21 +22,33 @@
       formId: "05e8aedb-0207-47ef-b397-b678fc425d93"
     });
 
-    // // Create with javascript
-    // var newDrawer = window.document.createElement('time-formatted');
-    //
-    // // Add it to the page
-    // window.document.body.appendChild(newDrawer);
-    //
-    // // Attach event listeners
-    // window.document.querySelector('time-formatted').addEventListener('open', function(..._) {
-    //   console.dir(_);
-    // });
+    // Create with javascript
+    var newDrawer = window.document.createElement('time-formatted');
+    var map1 = new Map();
+
+    newDrawer.setAttribute("style", "color: grey");
+    newDrawer.setAttribute("datetime", "1977-07-13T03:24:00");
+
+    map1.set('year', 'numeric');
+    map1.set('month', 'long');
+    map1.set('day', 'numeric');
+    map1.set('hour', 'numeric');
+    map1.set('minute', 'numeric');
+    map1.set('second', 'numeric');
+    map1.set('time-zone-name', 'short');
+
+    map1.forEach(function(value, key) {
+      newDrawer.setAttribute(key, value);
+    });
+
+    newDrawer.addEventListener("click", () => window.alert(42), { once: false });
+
+    window.document.body.appendChild(newDrawer);
   </script>
   <hr>
   <time-formatted
     style="color: grey;"
-    datetime="2021-07-13"
+    datetime="2021-08-18T03:24:00"
     year="numeric" month="long" day="numeric"
     hour="numeric" minute="numeric" second="numeric"
     time-zone-name="short"

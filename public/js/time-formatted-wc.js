@@ -49,7 +49,6 @@ class TimeFormatted extends HTMLElement { // (1)
         console.error(err);
       });
   }
-
 }
 
 window.customElements.define("time-formatted", TimeFormatted); // (2)
