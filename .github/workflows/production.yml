@@ -294,8 +294,4 @@ jobs:
         env:
           TEST_CONTEXT: 'package.json'
         run: |
-          echo "$TEST_CONTEXT"
-
-      - name: Assign release version from version.properties to Env variable
-        run: |
-          echo package.json
+          cat package.json
