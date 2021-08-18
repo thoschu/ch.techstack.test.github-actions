@@ -279,12 +279,12 @@ jobs:
       - name: Dump Tagname
         env:
           TAG_CONTEXT: ${{ github.event.release.tag_name }}
-          FOO_C: node -p "require('./package.json').version"
         run: |
             echo "$TAG_CONTEXT"
-            echo "$FOO_C"
 
-      - run: npm ci
+      - run: |
+          npm ci
+          echo "$TAG_CONTEXT"
 #      - run: npm publish
 #        env:
 #          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH}}
