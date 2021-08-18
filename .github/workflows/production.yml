@@ -273,7 +273,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
 
       - name: Dump env
-          run: env | sort
+        run: env | sort
 
       - name: Dump Tagname
         env:
