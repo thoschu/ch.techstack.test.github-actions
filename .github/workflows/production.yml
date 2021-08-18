@@ -179,7 +179,7 @@ jobs:
     runs-on: ubuntu-latest
     #needs: [ build ]
     environment:
-      name: production_environment
+      name: production
       #url: ${{ steps.step_id.outputs.url_output }}
       url: https://ponyboy-curtis-3377.ew.r.appspot.com/
     steps:
