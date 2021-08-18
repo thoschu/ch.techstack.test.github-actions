@@ -198,7 +198,7 @@ jobs:
     # if: github.event_name == 'pull_request'
     # if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
-    needs: [ build, deploy-to-google-app-engine]
+    needs: [ build, deploy-to-google-app-engine ]
     steps:
 
       - name: Checkout
@@ -258,6 +258,7 @@ jobs:
 
   publish-ghpr:
     runs-on: ubuntu-latest
+    needs: [ package ]
     permissions:
       packages: write
       contents: read
@@ -270,6 +271,7 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
+      - run: npm version ${{ github.event.release.tag_name }}
       - run: npm ci
       - run: npm publish
         env:

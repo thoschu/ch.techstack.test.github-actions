@@ -5,15 +5,15 @@ class TimeFormatted extends HTMLElement { // (1)
     // Calls the parent constructor, i.e. the constructor for `HTMLElement`, so that everything is set up exactly as we would for creating a built in HTML element
     super();
 
-    // Grabs the <template> and stores it in `warning`
-    let warning = document.getElementById("warningtemplate");
-
-    // Stores the contents of the template in `mywarning`
-    let mywarning = warning.content;
-
-    const shadowRoot = this.attachShadow({mode: "open"}).appendChild(mywarning.cloneNode(true));
-    // ToDo
-    console.dir(shadowRoot);
+    // // Grabs the <template> and stores it in `warning`
+    // let warning = document.getElementById("warningtemplate");
+    //
+    // // Stores the contents of the template in `mywarning`
+    // let mywarning = warning.content;
+    //
+    // const shadowRoot = this.attachShadow({mode: "open"}).appendChild(mywarning.cloneNode(true));
+    // // ToDo
+    // console.dir(shadowRoot);
 
     this.load();
   }
@@ -42,9 +42,11 @@ class TimeFormatted extends HTMLElement { // (1)
       })
       .then(function(json) {
         // Hier Code zum einarbeiten der Kurse in die Anzeige
+        console.log(json);
       })
       .catch(function(err) {
         // Hier Fehlerbehandlung
+        console.error(err);
       });
   }
 
