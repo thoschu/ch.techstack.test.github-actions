@@ -1,6 +1,6 @@
 {
   "name": "@thoschu/ch.techstack.test.github-actions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node.js on Docker and Registries",
   "author": "Tom S. <thoschulte@gmail.com>",
   "bin": "bin/runner.js",

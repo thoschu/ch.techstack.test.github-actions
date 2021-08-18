@@ -1,9 +1,9 @@
 # app.yaml
 runtime: nodejs14
-service: staging
+service: default
 # env: standard
 env_variables:
-  NAME: "Tom S. [thoschu] - staging"
+  NAME: "Tom S. [thoschu]"
 # instance_class: F1
 # automatic_scaling:
 #  min_idle_instances: automatic
