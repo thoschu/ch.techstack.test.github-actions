@@ -298,5 +298,4 @@ jobs:
 
       - name: Assign release version from version.properties to Env variable
         run: |
-          cat package.json >> env.GITHUB_ENV
-          echo "$GITHUB_ENV"
+          echo package.json
