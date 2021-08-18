@@ -279,7 +279,8 @@ jobs:
         env:
           TAG_CONTEXT: ${{ github.event.release.tag_name }}
         run: |
-            echo "TAG_CONTEXT"
+            echo "$TAG_CONTEXT"
+            node -p "require('./package.json').version"
 
 #      - run: |
 #          npm version ${{ github.event.release.tag_name }}
