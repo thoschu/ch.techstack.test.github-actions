@@ -38,7 +38,7 @@ class TimeFormatted extends HTMLElement { // (1)
         if (response.ok)
           return response.json();
         else
-          throw new Error('Kurse konnten nicht geladen werden');
+          throw new Error('Daten konnten nicht geladen werden');
       })
       .then(function(json) {
         // Hier Code zum einarbeiten der Kurse in die Anzeige
