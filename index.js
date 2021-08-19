@@ -18,7 +18,8 @@ app.get("/", async (req, res) => {
   res.json({
     status: "OK",
     port : PORT,
-    env: process.env.NAME || null
+    name: process.env.NAME || 'M. Mustermann',
+    env: 'production' || 'staging' || 'test'
   });
 });
 

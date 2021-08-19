@@ -41,10 +41,10 @@ class TimeFormatted extends HTMLElement { // (1)
           throw new Error('Daten konnten nicht geladen werden');
       })
       .then(function(json) {
-        // Hier Code zum einarbeiten der Kurse in die Anzeige
+        // Hier Code zum einarbeiten der Daten
         console.log(json);
         var node = document.createElement("P");
-        var textnode = document.createTextNode(JSON.stringify(json));
+        var textnode = document.createTextNode(JSON.stringify(json.name));
         node.appendChild(textnode);
         window.document.body.appendChild(node);
       })
