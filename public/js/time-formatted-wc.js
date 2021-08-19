@@ -43,7 +43,10 @@ class TimeFormatted extends HTMLElement { // (1)
       .then(function(json) {
         // Hier Code zum einarbeiten der Kurse in die Anzeige
         console.log(json);
-        window.document.body.appendChild(JSON.stringify(json));
+        var node = document.createElement("P");
+        var textnode = document.createTextNode(JSON.stringify(json));
+        node.appendChild(textnode);
+        window.document.body.appendChild(node);
       })
       .catch(function(err) {
         // Hier Fehlerbehandlung
